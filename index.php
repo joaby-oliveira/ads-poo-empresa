@@ -7,6 +7,13 @@ class Employee
   private $position;
   private $wage;
 
+  function __construct($name, $enterprise, $position, $wage)
+  {
+    $this->name = $name;
+    $this->enterprise = $enterprise;
+    $this->position = $position;
+    $this->wage = $wage;
+  }
 
   public function getName()
   {
