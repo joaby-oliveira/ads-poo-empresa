@@ -50,3 +50,24 @@ class Employee
     $this->wage = $wage;
   }
 }
+
+
+class Salesman extends Employee
+{
+  private $commission;
+
+  function __construct($name, $enterprise, $position, $wage, $commission)
+  {
+    Employee::__construct($name, $enterprise, $position, $wage);
+    $this->commission = $commission;
+  }
+
+  public function getWage()
+  {
+    return Employee::getWage() + $this->commission;
+  }
+}
+
+$salesman = new Salesman('Joaby', 'Pagai', 'Salesman', 2202, 300);
+
+echo $salesman->getWage();
