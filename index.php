@@ -70,4 +70,27 @@ class Salesman extends Employee
 
 $salesman = new Salesman('Joaby', 'Pagai', 'Salesman', 2202, 300);
 
+echo "Salesman: ";
 echo $salesman->getWage();
+echo "<br>";
+
+
+class Manager extends Employee
+{
+  function __construct($name, $enterprise, $position, $wage)
+  {
+    Employee::__construct($name, $enterprise, $position, $wage);
+  }
+
+  public function getWage()
+  {
+    return Employee::getWage() + (Employee::getWage() * 0.05);
+  }
+}
+
+$manager = new Manager('Jobs', 'Pagai', 'Gerente', 5900);
+
+
+echo "Manager: ";
+echo $manager->getWage();
+echo "<br>";
